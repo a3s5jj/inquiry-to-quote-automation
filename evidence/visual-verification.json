@@ -1,0 +1,20 @@
+{
+  "observed_at": "2026-09-28T21:15:00+08:00",
+  "status": "PASS",
+  "engine": "n8n 2.27.4",
+  "method": "Current canonical exports imported through the n8n CLI into the shared local n8n (localhost:5678) and exported again for exact node and connection comparison, with no editor save or activation. The canvases were inspected at zoom-to-fit in a separate throwaway local n8n editor (port 5895, test owner login, deleted afterwards) because the shared editor requires the operator's own sign-in. Node and label rectangles were measured in the browser and the screenshots saved as canvas-*.png. n8n's floating Execute workflow buttons were hidden for the screenshots only.",
+  "sourceParityAfterImport": {
+    "nodesExact": true,
+    "connectionsExact": true,
+    "allInactive": true,
+    "credentialBindings": 0
+  },
+  "canvases": [
+    { "workflow": "ITQ01Inbox", "nodeCount": 13, "nodeCollisions": 0, "labelCollisions": 0, "allNodesInView": true, "screenshot": "canvas-intake.png" },
+    { "workflow": "ITQ02Prepare", "nodeCount": 12, "nodeCollisions": 0, "labelCollisions": 0, "allNodesInView": true, "screenshot": "canvas-preparation.png", "newNodes": ["Follow-up draft generated?", "Follow-up awaiting staff review"] },
+    { "workflow": "ITQ03Review", "nodeCount": 20, "nodeCollisions": 0, "labelCollisions": 0, "allNodesInView": true, "screenshot": "canvas-review.png" },
+    { "workflow": "ITQ04Maintenance", "nodeCount": 16, "nodeCollisions": 0, "labelCollisions": 0, "allNodesInView": true, "screenshot": "canvas-maintenance.png" }
+  ],
+  "totalNodes": 61,
+  "savedPngBoundary": "The canvas PNG files were captured on 28 September 2026 from the current 61-node exports. review-preview.png and handoff-preview.png show the regenerated offline demo pages."
+}

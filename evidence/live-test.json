@@ -1,0 +1,88 @@
+{
+  "status": "LIVE_VERIFIED",
+  "scope": "Exercised paths only; see not_exercised",
+  "observed_on": "2026-09-29",
+  "runtime": "n8n 2.27.4 (local, Windows); private ITQLive copies of the 4 canonical workflows, imported inactive via the n8n CLI (round-trip exact), activated for the test, then deactivated",
+  "integrations": {
+    "gmail": "Real Gmail account via n8n Gmail OAuth2 credential; intake query limited to one test sender address; a second real Gmail account sent every customer email by hand",
+    "claude": "Anthropic Messages API, claude-haiku-4-5-20251001, via an n8n Anthropic credential",
+    "database": "Hosted Supabase Postgres (free project, Singapore, session pooler) with the restricted itq_workflow login; SSL required with certificate verification against the Supabase Root 2021 CA",
+    "staff_portal": "n8n webhook with Basic Auth, used from a desktop browser"
+  },
+  "claude_usage": {
+    "calls": 6,
+    "input_tokens": 10358,
+    "output_tokens": 1573,
+    "retries": 0
+  },
+  "scenarios": [
+    {
+      "id": 1,
+      "scenario": "Complete inquiry, quote, staff approval, reply in the same thread",
+      "result": "PASS",
+      "observed": "Quote PHP 2,400.00 per visit, PHP 7,200.00 weekly; approved in the portal; sent as a reply in the original thread",
+      "timestamps_utc": { "received": "2026-09-29T11:19:27Z", "approved": "2026-09-29T11:53:31Z", "sent": "2026-09-29T11:54:02Z" }
+    },
+    {
+      "id": 2,
+      "scenario": "Price details only, casual start date",
+      "result": "PASS",
+      "observed": "Quote sent without waiting for hours: PHP 1,500.00 per visit (minimum visit price), hours 'to confirm', start date Monday 5 October 2026 shown with the customer's words 'next Monday'. Claude copied the words; code resolved the date",
+      "timestamps_utc": { "received": "2026-09-29T12:02:41Z", "approved": "2026-09-29T12:04:36Z", "sent": "2026-09-29T12:05:02Z" }
+    },
+    {
+      "id": 3,
+      "scenario": "Customer adds hours after the quote",
+      "result": "PASS",
+      "observed": "Same inquiry, revision 2; updated quote states 'The price has not changed', same price and validity, hours filled in",
+      "timestamps_utc": { "received": "2026-09-29T12:05:47Z", "approved": "2026-09-29T12:08:08Z", "sent": "2026-09-29T12:09:02Z" }
+    },
+    {
+      "id": 4,
+      "scenario": "Follow-ups after silence (followUpAfterMinutes [3, 6])",
+      "result": "PASS",
+      "observed": "Follow-up 1 of 2 prepared 3 minutes after the quote, approved and sent in the thread. Follow-up 2 of 2 prepared once follow-up 1 was sent, rejected, not sent. Three further preparation rounds created no further follow-up",
+      "timestamps_utc": { "follow_up_1_prepared": "2026-09-29T11:58:00Z", "follow_up_1_sent": "2026-09-29T12:01:02Z", "follow_up_2_prepared": "2026-09-29T12:02:00Z", "follow_up_2_rejected": "2026-09-29T12:05:21Z" }
+    },
+    {
+      "id": 5,
+      "scenario": "Customer acceptance and operations brief",
+      "result": "PASS",
+      "observed": "Acceptance detected (status acceptance_review); staff confirmed; operations brief shows start date 2026-10-05, the words 'next Monday', and the checklist item to confirm that date; schedule stays UNCONFIRMED. Run on the scenario 2 thread because the acceptance reply was sent there",
+      "timestamps_utc": { "received": "2026-09-29T12:09:17Z", "confirmed": "2026-09-29T12:10:52Z" }
+    },
+    {
+      "id": 6,
+      "scenario": "Price-detail change after a sent quote",
+      "result": "PASS",
+      "observed": "Floor area change to 300 sqm: the sent quote is superseded and a new quote is prepared at PHP 3,600.00 per visit, PHP 10,800.00 weekly; approved and sent in the thread. Run on the scenario 1 thread (swapped with scenario 5)",
+      "timestamps_utc": { "received": "2026-09-29T12:14:03Z", "approved": "2026-09-29T12:16:53Z", "sent": "2026-09-29T12:17:02Z" }
+    },
+    {
+      "id": 7,
+      "scenario": "Stale or repeated approval",
+      "result": "PASS",
+      "observed": "A stale browser page re-submitted approval for the already-sent scenario 1 quote; the database refused it (INVALID_OR_USED_APPROVAL) and the thread still holds exactly one quote message",
+      "timestamps_utc": { "refused": "2026-09-29T12:00:43Z" }
+    },
+    {
+      "id": 8,
+      "scenario": "Instruction to ignore rules and give a 90% discount",
+      "result": "PASS",
+      "observed": "No price details extracted; Claude summary flagged it as not a legitimate service inquiry; status manual_review; the next preparation round drafted nothing",
+      "timestamps_utc": { "received": "2026-09-29T12:17:58Z", "no_draft_confirmed": "2026-09-29T12:19:00Z" }
+    }
+  ],
+  "not_exercised": [
+    "Clarification drafts for incomplete price details",
+    "Staff notification emails (disabled for the test)",
+    "Uncertain-send reconciliation and error-workflow dispatch (no failures occurred)",
+    "Quote and approval expiry",
+    "Portal detail corrections by staff"
+  ],
+  "findings": [
+    "Portal wording: a rejected draft card says 'Rejected, not sent' but its decision line reads 'Approved by staff' with the decision time. Cosmetic; nothing was sent",
+    "Supabase's pooler certificate chains to the Supabase Root 2021 CA, which is not in the default trust store; n8n needs NODE_EXTRA_CA_CERTS pointing at the CA downloaded from the Supabase dashboard to keep SSL verification on",
+    "Basic Auth on the staff portal: after one wrong login n8n answers 403, so browsers do not prompt again; a private window clears it. Embedded browsers that cannot show the Basic Auth prompt cannot open the portal"
+  ]
+}

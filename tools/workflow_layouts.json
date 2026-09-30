@@ -1,0 +1,645 @@
+{
+  "grid": 208,
+  "dot": 16,
+  "node": 96,
+  "edgeGap": 112,
+  "WORKFLOW_LAYOUTS": {
+    "ITQ01Inbox": {
+      "filename": "01-gmail-intake.json",
+      "nodeCount": 13,
+      "positions": {
+        "Gmail inquiry": [
+          0,
+          0
+        ],
+        "Sender and message safety checks": [
+          208,
+          0
+        ],
+        "Lease inquiry": [
+          416,
+          0
+        ],
+        "Analysis claimed": [
+          624,
+          0
+        ],
+        "Prepare Claude request": [
+          832,
+          0
+        ],
+        "Claude analyze": [
+          1040,
+          0
+        ],
+        "Validate extracted evidence": [
+          1248,
+          0
+        ],
+        "Store validated facts": [
+          1456,
+          0
+        ],
+        "Intake and evidence recorded": [
+          1664,
+          0
+        ],
+        "Retry queue tick": [
+          0,
+          416
+        ],
+        "Claim requested retry": [
+          208,
+          416
+        ],
+        "Lease requested retry": [
+          416,
+          416
+        ],
+        "Duplicate or no analysis work": [
+          0,
+          832
+        ]
+      },
+      "spacingGroups": [
+        {
+          "axis": "x",
+          "names": [
+            "Gmail inquiry",
+            "Sender and message safety checks",
+            "Lease inquiry",
+            "Analysis claimed",
+            "Prepare Claude request",
+            "Claude analyze",
+            "Validate extracted evidence",
+            "Store validated facts",
+            "Intake and evidence recorded"
+          ]
+        },
+        {
+          "axis": "x",
+          "names": [
+            "Retry queue tick",
+            "Claim requested retry",
+            "Lease requested retry"
+          ]
+        }
+      ],
+      "rectangles": {
+        "Gmail inquiry": {
+          "width": 96,
+          "height": 96
+        },
+        "Sender and message safety checks": {
+          "width": 96,
+          "height": 96
+        },
+        "Lease inquiry": {
+          "width": 96,
+          "height": 96
+        },
+        "Retry queue tick": {
+          "width": 96,
+          "height": 96
+        },
+        "Claim requested retry": {
+          "width": 96,
+          "height": 96
+        },
+        "Lease requested retry": {
+          "width": 96,
+          "height": 96
+        },
+        "Analysis claimed": {
+          "width": 96,
+          "height": 96
+        },
+        "Prepare Claude request": {
+          "width": 96,
+          "height": 96
+        },
+        "Claude analyze": {
+          "width": 96,
+          "height": 96
+        },
+        "Validate extracted evidence": {
+          "width": 96,
+          "height": 96
+        },
+        "Store validated facts": {
+          "width": 96,
+          "height": 96
+        },
+        "Intake and evidence recorded": {
+          "width": 96,
+          "height": 96
+        },
+        "Duplicate or no analysis work": {
+          "width": 96,
+          "height": 96
+        }
+      }
+    },
+    "ITQ02Prepare": {
+      "filename": "02-quote-preparation.json",
+      "nodeCount": 12,
+      "positions": {
+        "Prepare tick": [
+          0,
+          0
+        ],
+        "Request draft preparation": [
+          208,
+          0
+        ],
+        "Validate scope, calculate price, and version draft": [
+          416,
+          0
+        ],
+        "Preparation transaction completed": [
+          624,
+          0
+        ],
+        "Expose prepared drafts": [
+          832,
+          0
+        ],
+        "Quote draft generated?": [
+          1040,
+          0
+        ],
+        "Quote awaiting staff review": [
+          1248,
+          0
+        ],
+        "Clarification draft generated?": [
+          1040,
+          416
+        ],
+        "Clarification awaiting staff review": [
+          1248,
+          416
+        ],
+        "Follow-up draft generated?": [
+          1040,
+          832
+        ],
+        "Follow-up awaiting staff review": [
+          1248,
+          832
+        ],
+        "Question awaiting staff review": [
+          1248,
+          1248
+        ]
+      },
+      "spacingGroups": [
+        {
+          "axis": "x",
+          "names": [
+            "Prepare tick",
+            "Request draft preparation",
+            "Validate scope, calculate price, and version draft",
+            "Preparation transaction completed",
+            "Expose prepared drafts",
+            "Quote draft generated?",
+            "Quote awaiting staff review"
+          ]
+        },
+        {
+          "axis": "x",
+          "names": [
+            "Clarification draft generated?",
+            "Clarification awaiting staff review"
+          ]
+        },
+        {
+          "axis": "x",
+          "names": [
+            "Follow-up draft generated?",
+            "Follow-up awaiting staff review"
+          ]
+        }
+      ],
+      "rectangles": {
+        "Prepare tick": {
+          "width": 96,
+          "height": 96
+        },
+        "Request draft preparation": {
+          "width": 96,
+          "height": 96
+        },
+        "Validate scope, calculate price, and version draft": {
+          "width": 96,
+          "height": 96
+        },
+        "Preparation transaction completed": {
+          "width": 96,
+          "height": 96
+        },
+        "Expose prepared drafts": {
+          "width": 96,
+          "height": 96
+        },
+        "Quote draft generated?": {
+          "width": 96,
+          "height": 96
+        },
+        "Quote awaiting staff review": {
+          "width": 96,
+          "height": 96
+        },
+        "Clarification draft generated?": {
+          "width": 96,
+          "height": 96
+        },
+        "Clarification awaiting staff review": {
+          "width": 96,
+          "height": 96
+        },
+        "Follow-up draft generated?": {
+          "width": 96,
+          "height": 96
+        },
+        "Follow-up awaiting staff review": {
+          "width": 96,
+          "height": 96
+        },
+        "Question awaiting staff review": {
+          "width": 96,
+          "height": 96
+        }
+      }
+    },
+    "ITQ03Review": {
+      "filename": "03-review-and-delivery.json",
+      "nodeCount": 20,
+      "positions": {
+        "Open staff review": [
+          0,
+          0
+        ],
+        "Read review queue": [
+          208,
+          0
+        ],
+        "Load staff queue": [
+          416,
+          0
+        ],
+        "Render staff page": [
+          624,
+          0
+        ],
+        "Show staff page": [
+          832,
+          0
+        ],
+        "Submit staff decision": [
+          0,
+          416
+        ],
+        "Validate staff action": [
+          208,
+          416
+        ],
+        "Valid staff action": [
+          416,
+          416
+        ],
+        "Apply staff decision": [
+          624,
+          416
+        ],
+        "Render action result": [
+          832,
+          416
+        ],
+        "Show action result": [
+          1040,
+          416
+        ],
+        "Delivery tick": [
+          0,
+          832
+        ],
+        "Delivery configuration": [
+          208,
+          832
+        ],
+        "Customer sending enabled": [
+          416,
+          832
+        ],
+        "Claim approved send": [
+          624,
+          832
+        ],
+        "One claimed send": [
+          832,
+          832
+        ],
+        "Reply with approved message": [
+          1040,
+          832
+        ],
+        "Classify send result": [
+          1248,
+          832
+        ],
+        "Record delivery outcome": [
+          1456,
+          832
+        ],
+        "Delivery recorded": [
+          1664,
+          832
+        ]
+      },
+      "spacingGroups": [
+        {
+          "axis": "x",
+          "names": [
+            "Open staff review",
+            "Read review queue",
+            "Load staff queue",
+            "Render staff page",
+            "Show staff page"
+          ]
+        },
+        {
+          "axis": "x",
+          "names": [
+            "Submit staff decision",
+            "Validate staff action",
+            "Valid staff action",
+            "Apply staff decision",
+            "Render action result",
+            "Show action result"
+          ]
+        },
+        {
+          "axis": "x",
+          "names": [
+            "Delivery tick",
+            "Delivery configuration",
+            "Customer sending enabled",
+            "Claim approved send",
+            "One claimed send",
+            "Reply with approved message",
+            "Classify send result",
+            "Record delivery outcome",
+            "Delivery recorded"
+          ]
+        }
+      ],
+      "rectangles": {
+        "Open staff review": {
+          "width": 96,
+          "height": 96
+        },
+        "Read review queue": {
+          "width": 96,
+          "height": 96
+        },
+        "Load staff queue": {
+          "width": 96,
+          "height": 96
+        },
+        "Render staff page": {
+          "width": 96,
+          "height": 96
+        },
+        "Show staff page": {
+          "width": 96,
+          "height": 96
+        },
+        "Submit staff decision": {
+          "width": 96,
+          "height": 96
+        },
+        "Validate staff action": {
+          "width": 96,
+          "height": 96
+        },
+        "Valid staff action": {
+          "width": 96,
+          "height": 96
+        },
+        "Apply staff decision": {
+          "width": 96,
+          "height": 96
+        },
+        "Render action result": {
+          "width": 96,
+          "height": 96
+        },
+        "Show action result": {
+          "width": 96,
+          "height": 96
+        },
+        "Delivery tick": {
+          "width": 96,
+          "height": 96
+        },
+        "Delivery configuration": {
+          "width": 96,
+          "height": 96
+        },
+        "Customer sending enabled": {
+          "width": 96,
+          "height": 96
+        },
+        "Claim approved send": {
+          "width": 96,
+          "height": 96
+        },
+        "One claimed send": {
+          "width": 96,
+          "height": 96
+        },
+        "Reply with approved message": {
+          "width": 96,
+          "height": 96
+        },
+        "Classify send result": {
+          "width": 96,
+          "height": 96
+        },
+        "Record delivery outcome": {
+          "width": 96,
+          "height": 96
+        },
+        "Delivery recorded": {
+          "width": 96,
+          "height": 96
+        }
+      }
+    },
+    "ITQ04Maintenance": {
+      "filename": "04-maintenance.json",
+      "nodeCount": 16,
+      "positions": {
+        "Maintenance tick": [
+          0,
+          0
+        ],
+        "Maintain deadlines": [
+          208,
+          0
+        ],
+        "Record overdue and uncertain": [
+          416,
+          0
+        ],
+        "Maintenance recorded": [
+          624,
+          0
+        ],
+        "Staff notification configuration": [
+          832,
+          0
+        ],
+        "Staff notifications enabled": [
+          1040,
+          0
+        ],
+        "Claim staff notifications": [
+          1248,
+          0
+        ],
+        "One staff digest": [
+          1456,
+          0
+        ],
+        "Email staff digest": [
+          1664,
+          0
+        ],
+        "Staff notification result": [
+          1872,
+          0
+        ],
+        "Record staff notification": [
+          2080,
+          0
+        ],
+        "Notification recorded": [
+          2288,
+          0
+        ],
+        "Workflow failure": [
+          0,
+          416
+        ],
+        "Sanitize execution error": [
+          208,
+          416
+        ],
+        "Record workflow exception": [
+          416,
+          416
+        ],
+        "Exception recorded": [
+          624,
+          416
+        ]
+      },
+      "spacingGroups": [
+        {
+          "axis": "x",
+          "names": [
+            "Maintenance tick",
+            "Maintain deadlines",
+            "Record overdue and uncertain",
+            "Maintenance recorded",
+            "Staff notification configuration",
+            "Staff notifications enabled",
+            "Claim staff notifications",
+            "One staff digest",
+            "Email staff digest",
+            "Staff notification result",
+            "Record staff notification",
+            "Notification recorded"
+          ]
+        },
+        {
+          "axis": "x",
+          "names": [
+            "Workflow failure",
+            "Sanitize execution error",
+            "Record workflow exception",
+            "Exception recorded"
+          ]
+        }
+      ],
+      "rectangles": {
+        "Maintenance tick": {
+          "width": 96,
+          "height": 96
+        },
+        "Maintain deadlines": {
+          "width": 96,
+          "height": 96
+        },
+        "Record overdue and uncertain": {
+          "width": 96,
+          "height": 96
+        },
+        "Maintenance recorded": {
+          "width": 96,
+          "height": 96
+        },
+        "Staff notification configuration": {
+          "width": 96,
+          "height": 96
+        },
+        "Staff notifications enabled": {
+          "width": 96,
+          "height": 96
+        },
+        "Claim staff notifications": {
+          "width": 96,
+          "height": 96
+        },
+        "One staff digest": {
+          "width": 96,
+          "height": 96
+        },
+        "Email staff digest": {
+          "width": 96,
+          "height": 96
+        },
+        "Staff notification result": {
+          "width": 96,
+          "height": 96
+        },
+        "Record staff notification": {
+          "width": 96,
+          "height": 96
+        },
+        "Notification recorded": {
+          "width": 96,
+          "height": 96
+        },
+        "Workflow failure": {
+          "width": 96,
+          "height": 96
+        },
+        "Sanitize execution error": {
+          "width": 96,
+          "height": 96
+        },
+        "Record workflow exception": {
+          "width": 96,
+          "height": 96
+        },
+        "Exception recorded": {
+          "width": 96,
+          "height": 96
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "status": "OFFLINE_RUNTIME_VERIFIED",
+  "live_integrations": "NOT_LIVE_TESTED",
+  "runtime": "n8n 2.27.4; native Postgres node against PGlite TCP; Claude/Gmail loopback fixtures",
+  "scenarios": [
+    {
+      "scenario": "Canonical inactive import and round-trip",
+      "result": "PASS",
+      "workflows": 4
+    },
+    {
+      "scenario": "complete-inquiry",
+      "result": "PASS",
+      "engine": "n8n 2.27.4",
+      "provider_calls": "loopback fixtures only"
+    },
+    {
+      "scenario": "duplicate-inquiry",
+      "result": "PASS",
+      "engine": "n8n 2.27.4",
+      "provider_calls": "loopback fixtures only"
+    },
+    {
+      "scenario": "prepare-quote",
+      "result": "PASS",
+      "engine": "n8n 2.27.4",
+      "provider_calls": "loopback fixtures only"
+    },
+    {
+      "scenario": "render-staff-portal",
+      "result": "PASS",
+      "engine": "n8n 2.27.4",
+      "provider_calls": "loopback fixtures only"
+    },
+    {
+      "scenario": "approve-quote",
+      "result": "PASS",
+      "engine": "n8n 2.27.4",
+      "provider_calls": "loopback fixtures only"
+    },
+    {
+      "scenario": "send-approved-quote",
+      "result": "PASS",
+      "engine": "n8n 2.27.4",
+      "provider_calls": "loopback fixtures only"
+    },
+    {
+      "scenario": "no-duplicate-send",
+      "result": "PASS",
+      "engine": "n8n 2.27.4",
+      "provider_calls": "loopback fixtures only"
+    },
+    {
+      "scenario": "prepare-follow-up",
+      "result": "PASS",
+      "engine": "n8n 2.27.4",
+      "provider_calls": "loopback fixtures only"
+    },
+    {
+      "scenario": "approve-follow-up",
+      "result": "PASS",
+      "engine": "n8n 2.27.4",
+      "provider_calls": "loopback fixtures only"
+    },
+    {
+      "scenario": "send-approved-follow-up",
+      "result": "PASS",
+      "engine": "n8n 2.27.4",
+      "provider_calls": "loopback fixtures only"
+    },
+    {
+      "scenario": "acceptance-reply",
+      "result": "PASS",
+      "engine": "n8n 2.27.4",
+      "provider_calls": "loopback fixtures only"
+    },
+    {
+      "scenario": "confirm-operations-handoff",
+      "result": "PASS",
+      "engine": "n8n 2.27.4",
+      "provider_calls": "loopback fixtures only"
+    },
+    {
+      "scenario": "maintenance-and-staff-digest",
+      "result": "PASS",
+      "engine": "n8n 2.27.4",
+      "provider_calls": "loopback fixtures only"
+    }
+  ],
+  "synthetic_claude_calls": 2,
+  "synthetic_email_attempts": 3,
+  "observed_at": "2026-09-30T05:46:23.142Z"
+}

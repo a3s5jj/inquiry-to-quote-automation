@@ -1,0 +1,23 @@
+{
+  "name": "inquiry-to-quote",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Portable n8n Gmail and Claude inquiry-to-quote workflow",
+  "engines": {
+    "node": ">=22.22"
+  },
+  "scripts": {
+    "build": "node tools/build_workflows.mjs",
+    "build:private": "node tools/build_workflows.mjs --private",
+    "test": "node --test --test-concurrency=1 tests/*.test.mjs",
+    "verify": "npm run build && npm test",
+    "demo": "node tools/demo.mjs",
+    "package": "node tools/package.mjs"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "0.5.8",
+    "@electric-sql/pglite-socket": "0.2.11",
+    "fflate": "0.8.3"
+  }
+}

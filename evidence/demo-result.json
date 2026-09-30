@@ -1,0 +1,84 @@
+{
+  "status": "OFFLINE_VERIFIED",
+  "external_integrations": "NOT_LIVE_TESTED",
+  "synthetic": true,
+  "generated_at": "2026-09-29T14:42:10.214Z",
+  "trace": [
+    {
+      "step": "receive_and_analyze",
+      "message_id": "demo-message-1",
+      "intent": "new_inquiry",
+      "claude": "SIMULATED"
+    },
+    {
+      "step": "receive_and_analyze",
+      "message_id": "demo-message-2",
+      "intent": "new_inquiry",
+      "claude": "SIMULATED"
+    },
+    {
+      "step": "receive_and_analyze",
+      "message_id": "demo-message-4",
+      "intent": "new_inquiry",
+      "claude": "SIMULATED"
+    },
+    {
+      "step": "quote_without_hours_and_casual_start_date",
+      "start_date_words": "next Monday",
+      "preferred_hours": "to confirm"
+    },
+    {
+      "step": "quote_approved_and_delivery_confirmed",
+      "gmail": "SIMULATED",
+      "price_per_visit_php": 2400,
+      "weekly_php": 7200
+    },
+    {
+      "step": "receive_and_analyze",
+      "message_id": "demo-message-3",
+      "intent": "acceptance",
+      "claude": "SIMULATED"
+    },
+    {
+      "step": "follow_up_draft_after_two_quiet_days",
+      "follow_up": "1 of 2",
+      "claude": "NOT_USED"
+    },
+    {
+      "step": "staff_confirmed_acceptance",
+      "jobs": 1,
+      "schedule_status": "UNCONFIRMED"
+    }
+  ],
+  "job_brief": {
+    "scope": {
+      "area_sqm": 200,
+      "location": "BGC",
+      "preferred_hours": "6pm to 9pm",
+      "frequency_per_week": 3,
+      "requested_start_date": "2026-10-29"
+    },
+    "service": "Recurring office cleaning",
+    "currency": "PHP",
+    "quote_id": "28df0064-e575-4f54-92fc-b4c2e5e13944",
+    "quoted_scope": {
+      "area_sqm": 200,
+      "location": "BGC",
+      "preferred_hours": "6pm to 9pm",
+      "frequency_per_week": 3,
+      "requested_start_date": "2026-10-29"
+    },
+    "rate_version": "DEMO-PHP-1",
+    "customer_email": "facilities@example.test",
+    "schedule_status": "UNCONFIRMED",
+    "acceptance_message_id": "demo-message-3",
+    "weekly_price_centavos": 720000,
+    "outstanding_requirements": [
+      "Staff must confirm service area and site access.",
+      "Staff must confirm schedule and crew availability.",
+      "Review supplies, taxes, special cleaning, and commercial terms before work.",
+      "Demonstration pricing is not a binding commercial offer."
+    ],
+    "price_per_visit_centavos": 240000
+  }
+}

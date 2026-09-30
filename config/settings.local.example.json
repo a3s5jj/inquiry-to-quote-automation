@@ -1,0 +1,32 @@
+{
+  "businessName": "Demo Office Cleaning",
+  "model": "claude-haiku-4-5-20251001",
+  "publicBaseUrl": "http://localhost:5678",
+  "staffEmail": "reviewer@example.invalid",
+  "enableCustomerSending": true,
+  "enableStaffNotifications": false,
+  "followUpAfterMinutes": [
+    3,
+    6
+  ],
+  "gmailQuery": "label:ITQ -in:sent -in:drafts -in:spam -in:trash",
+  "timezone": "Asia/Manila",
+  "credentials": {
+    "postgres": {
+      "id": "REPLACE_WITH_N8N_CREDENTIAL_ID",
+      "name": "ITQ live test Postgres"
+    },
+    "gmail": {
+      "id": "REPLACE_WITH_N8N_CREDENTIAL_ID",
+      "name": "ITQ live test Gmail"
+    },
+    "anthropic": {
+      "id": "REPLACE_WITH_N8N_CREDENTIAL_ID",
+      "name": "ITQ live test Anthropic"
+    },
+    "staffPortal": {
+      "id": "REPLACE_WITH_N8N_CREDENTIAL_ID",
+      "name": "ITQ live test staff portal"
+    }
+  }
+}

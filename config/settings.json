@@ -1,0 +1,11 @@
+{
+  "businessName": "Demo Office Cleaning",
+  "model": "claude-haiku-4-5-20251001",
+  "publicBaseUrl": "https://n8n.example.invalid",
+  "staffEmail": "reviewer@example.invalid",
+  "enableCustomerSending": false,
+  "enableStaffNotifications": false,
+  "followUpAfterMinutes": [2880, 7200],
+  "gmailQuery": "label:ITQ -in:sent -in:drafts -in:spam -in:trash",
+  "timezone": "Asia/Manila"
+}

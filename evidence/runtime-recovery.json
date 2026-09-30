@@ -1,0 +1,93 @@
+{
+  "status": "OFFLINE_RUNTIME_VERIFIED",
+  "live_integrations": "NOT_LIVE_TESTED",
+  "runtime": "n8n 2.27.4; native Postgres node against PGlite TCP; Claude/Gmail loopback fixtures",
+  "scenarios": [
+    {
+      "scenario": "Canonical inactive import and round-trip",
+      "result": "PASS",
+      "workflows": 4
+    },
+    {
+      "scenario": "malformed-analysis-held",
+      "result": "PASS",
+      "engine": "n8n 2.27.4",
+      "provider_calls": "loopback fixtures only"
+    },
+    {
+      "scenario": "staff-manual-recovery",
+      "result": "PASS",
+      "engine": "n8n 2.27.4",
+      "provider_calls": "loopback fixtures only"
+    },
+    {
+      "scenario": "prepare-after-recovery",
+      "result": "PASS",
+      "engine": "n8n 2.27.4",
+      "provider_calls": "loopback fixtures only"
+    },
+    {
+      "scenario": "approve-recovered-quote",
+      "result": "PASS",
+      "engine": "n8n 2.27.4",
+      "provider_calls": "loopback fixtures only"
+    },
+    {
+      "scenario": "default-disabled-send",
+      "result": "PASS",
+      "engine": "n8n 2.27.4",
+      "provider_calls": "loopback fixtures only"
+    },
+    {
+      "scenario": "uncertain-provider-delivery",
+      "result": "PASS",
+      "engine": "n8n 2.27.4",
+      "provider_calls": "loopback fixtures only"
+    },
+    {
+      "scenario": "uncertain-not-retried",
+      "result": "PASS",
+      "engine": "n8n 2.27.4",
+      "provider_calls": "loopback fixtures only"
+    },
+    {
+      "scenario": "staff-reconciles-unsent",
+      "result": "PASS",
+      "engine": "n8n 2.27.4",
+      "provider_calls": "loopback fixtures only"
+    },
+    {
+      "scenario": "staff-requests-analysis-retry",
+      "result": "PASS",
+      "engine": "n8n 2.27.4",
+      "provider_calls": "loopback fixtures only"
+    },
+    {
+      "scenario": "queued-analysis-retry",
+      "result": "PASS",
+      "engine": "n8n 2.27.4",
+      "provider_calls": "loopback fixtures only"
+    },
+    {
+      "scenario": "record-workflow-exception",
+      "result": "PASS",
+      "engine": "n8n 2.27.4",
+      "provider_calls": "loopback fixtures only"
+    },
+    {
+      "scenario": "uncertain-staff-notification",
+      "result": "PASS",
+      "engine": "n8n 2.27.4",
+      "provider_calls": "loopback fixtures only"
+    },
+    {
+      "scenario": "invalid-form-rejected",
+      "result": "PASS",
+      "engine": "n8n 2.27.4",
+      "provider_calls": "loopback fixtures only"
+    }
+  ],
+  "synthetic_claude_calls": 2,
+  "synthetic_email_attempts": 2,
+  "observed_at": "2026-09-30T05:50:24.701Z"
+}
