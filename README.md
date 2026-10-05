@@ -40,7 +40,7 @@ with the operator's accounts.
 ## What it does
 
 ```mermaid
-flowchart LR
+flowchart TD
   A[Gmail inquiry] --> B[Claude copies stated details]
   B --> C{Location, area and visits known?}
   C -->|No| D[Staff reviews clarification]
